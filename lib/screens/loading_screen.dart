@@ -39,7 +39,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text('This is Loading Screen'),
-          RaisedButton(
+          MaterialButton(
             color: Colors.orange,
             child: Text('Go to Login Screen'),
             onPressed: () {
@@ -48,7 +48,7 @@ class _LoadingScreenState extends State<LoadingScreen> {
               }));
             },
           ),
-          RaisedButton(
+          MaterialButton(
             color: Colors.purple,
             child: Text('Go to Main Screen'),
             onPressed: () {

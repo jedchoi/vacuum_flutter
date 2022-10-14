@@ -9,7 +9,7 @@ class LoginScreen extends StatelessWidget {
         title: Text('Login Screen'),
       ),
       body: Center(
-        child: RaisedButton(
+        child: MaterialButton(
           color: Colors.red,
           child: Text('This is Login Screen'),
           onPressed: () {

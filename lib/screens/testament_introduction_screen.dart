@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:vacuum_flutter/screens/testament_introduction_screen.dart';
 
-class MainScreen extends StatelessWidget {
+class TestamentIntroductionScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: Text('Main Screen'),
+        title: Text('Testament introduction'),
       ),
       body: Center(
         child: Column(
@@ -15,9 +14,12 @@ class MainScreen extends StatelessWidget {
           children: [
             Expanded(
               flex: 12,
-              child: Center(
-                child: Text(
-                  "This is Main Page",
+              child: Container(
+                color: Colors.green,
+                child: Center(
+                  child: Text(
+                    "This is Testament introduction Page\nGive information of the Testament to user \non this screen.",
+                  ),
                 ),
               ),
             ),
@@ -25,12 +27,12 @@ class MainScreen extends StatelessWidget {
               flex: 2,
               child: MaterialButton(
                 color: Colors.purple,
-                child: Text('영상 유언 남기기'),
+                child: Text('사전 연습하기'),
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return TestamentIntroductionScreen();
-                  }));
-                  print('main screen button pressed');
+                  // Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  //   return Screen2();
+                  // }));
+                  print('Testament introduction button1 pressed');
                 },
               ),
             ),
@@ -38,12 +40,12 @@ class MainScreen extends StatelessWidget {
               flex: 2,
               child: MaterialButton(
                 color: Colors.blue,
-                child: Text('저장된 유언'),
+                child: Text('영상 유언 남기기'),
                 onPressed: () {
                   // Navigator.push(context, MaterialPageRoute(builder: (context) {
                   //   return Screen2();
                   // }));
-                  print('main screen button pressed');
+                  print('Testament introduction button2 pressed');
                 },
               ),
             ),
