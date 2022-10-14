@@ -13,6 +13,9 @@ class MainScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            SizedBox(
+              height: 5.0,
+            ),
             Expanded(
               flex: 12,
               child: Center(
@@ -21,18 +24,24 @@ class MainScreen extends StatelessWidget {
                 ),
               ),
             ),
+            SizedBox(
+              height: 5.0,
+            ),
             Expanded(
               flex: 2,
               child: MaterialButton(
                 color: Colors.purple,
                 child: Text('영상 유언 남기기'),
                 onPressed: () {
+                  print('Go to TestmentIntroductionScreen button pressed');
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return TestamentIntroductionScreen();
                   }));
-                  print('main screen button pressed');
                 },
               ),
+            ),
+            SizedBox(
+              height: 5.0,
             ),
             Expanded(
               flex: 2,
@@ -40,12 +49,15 @@ class MainScreen extends StatelessWidget {
                 color: Colors.blue,
                 child: Text('저장된 유언'),
                 onPressed: () {
+                  print('Go to SavedTestmentScreen button pressed');
                   // Navigator.push(context, MaterialPageRoute(builder: (context) {
                   //   return Screen2();
                   // }));
-                  print('main screen button pressed');
                 },
               ),
+            ),
+            SizedBox(
+              height: 15.0,
             ),
           ],
         ),

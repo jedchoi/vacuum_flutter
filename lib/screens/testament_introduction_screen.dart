@@ -12,6 +12,9 @@ class TestamentIntroductionScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
+            SizedBox(
+              height: 5.0,
+            ),
             Expanded(
               flex: 12,
               child: Container(
@@ -22,6 +25,9 @@ class TestamentIntroductionScreen extends StatelessWidget {
                   ),
                 ),
               ),
+            ),
+            SizedBox(
+              height: 5.0,
             ),
             Expanded(
               flex: 2,
@@ -36,6 +42,9 @@ class TestamentIntroductionScreen extends StatelessWidget {
                 },
               ),
             ),
+            SizedBox(
+              height: 5.0,
+            ),
             Expanded(
               flex: 2,
               child: MaterialButton(
@@ -48,6 +57,9 @@ class TestamentIntroductionScreen extends StatelessWidget {
                   print('Testament introduction button2 pressed');
                 },
               ),
+            ),
+            SizedBox(
+              height: 15.0,
             ),
           ],
         ),
