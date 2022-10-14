@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:vacuum_flutter/screens/recording_screen.dart';
+import 'package:vacuum_flutter/screens/test_recording_screen.dart';
 
 class TestamentIntroductionScreen extends StatelessWidget {
   @override
@@ -35,10 +37,10 @@ class TestamentIntroductionScreen extends StatelessWidget {
                 color: Colors.purple,
                 child: Text('사전 연습하기'),
                 onPressed: () {
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  //   return Screen2();
-                  // }));
-                  print('Testament introduction button1 pressed');
+                  print('Go to TestRecordingScreen.');
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return TestRecordingScreen();
+                  }));
                 },
               ),
             ),
@@ -51,10 +53,10 @@ class TestamentIntroductionScreen extends StatelessWidget {
                 color: Colors.blue,
                 child: Text('영상 유언 남기기'),
                 onPressed: () {
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  //   return Screen2();
-                  // }));
-                  print('Testament introduction button2 pressed');
+                  print('Go to RecordingScreen.');
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return RecordingScreen();
+                  }));
                 },
               ),
             ),
