@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vacuum_flutter/screens/recording_screen.dart';
-import 'package:vacuum_flutter/screens/test_recording_screen.dart';
+import 'package:vacuum_flutter/screens/test_recording_guide_screen.dart';
 
 class TestamentIntroductionScreen extends StatelessWidget {
   @override
@@ -37,9 +37,9 @@ class TestamentIntroductionScreen extends StatelessWidget {
                 color: Colors.purple,
                 child: Text('사전 연습하기'),
                 onPressed: () {
-                  print('Go to TestRecordingScreen.');
+                  print('Go to Test Recording Guide Screen.');
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return TestRecordingScreen();
+                    return TestRecordingGuideScreen();
                   }));
                 },
               ),
