@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vacuum_flutter/screens/testament_introduction_screen.dart';
+import 'package:vacuum_flutter/screens/testament_list_screen.dart';
 
 class MainScreen extends StatelessWidget {
   @override
@@ -50,9 +51,9 @@ class MainScreen extends StatelessWidget {
                 child: Text('저장된 유언'),
                 onPressed: () {
                   print('Go to SavedTestmentScreen button pressed');
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  //   return Screen2();
-                  // }));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return TestamentListScreen();
+                  }));
                 },
               ),
             ),
