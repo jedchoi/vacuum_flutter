@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:vacuum_flutter/screens/test_recording_screen.dart';
+import 'package:vacuum_flutter/screens/main_screen.dart';
+import 'package:vacuum_flutter/screens/testament_introduction_screen.dart';
 
-class TestRecordingGuideScreen extends StatelessWidget {
+class TestamentDetailScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: Text('Test Recording Gude Screen'),
+        title: Text('Testament Detail Screen'),
       ),
       body: Center(
         child: Column(
@@ -20,7 +21,7 @@ class TestRecordingGuideScreen extends StatelessWidget {
               flex: 14,
               child: Center(
                 child: Text(
-                  "This is Test Recording Guide Page",
+                  "This is Testament Detail Page",
                 ),
               ),
             ),
@@ -33,10 +34,11 @@ class TestRecordingGuideScreen extends StatelessWidget {
                 color: Colors.blue,
                 child: Text('완료'),
                 onPressed: () {
-                  print('Go to Test Recording Guide Screen.');
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return TestRecordingScreen();
-                  }));
+                  print('Testament Detail Page Done. Go to Main Screen');
+                  // Navigator.of(context).pop();
+                  // .popUntil(ModalRoute.withName('/MainScreen'));
+                  Navigator.popUntil(
+                      context, ModalRoute.withName(Navigator.defaultRouteName));
                 },
               ),
             ),

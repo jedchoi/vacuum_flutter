@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vacuum_flutter/screens/testament_detail_screen.dart';
 import 'package:vacuum_flutter/screens/testament_introduction_screen.dart';
 
 class TestRecordingScreen extends StatelessWidget {
@@ -34,9 +35,9 @@ class TestRecordingScreen extends StatelessWidget {
                 child: Text('완료'),
                 onPressed: () {
                   print('Test Recording Done. Go to Testament Saving Screen');
-                  // Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  //   return Screen2();
-                  // }));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return TestamentDetailScreen();
+                  }));
                 },
               ),
             ),
