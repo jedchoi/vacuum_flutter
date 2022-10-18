@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vacuum_flutter/common/constant.dart';
 import 'package:vacuum_flutter/screens/setting_screen.dart';
 import 'package:vacuum_flutter/screens/testament_introduction_screen.dart';
 import 'package:vacuum_flutter/screens/testament_list_screen.dart';
@@ -25,9 +26,7 @@ class MainScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(
-              height: 5.0,
-            ),
+            SizedBox(height: 5.0),
             Expanded(
               flex: 12,
               child: Center(
@@ -36,14 +35,15 @@ class MainScreen extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-              height: 5.0,
-            ),
+            SizedBox(height: 5.0),
             Expanded(
               flex: 2,
-              child: MaterialButton(
-                color: Colors.purple,
-                child: Text('영상 유언 남기기'),
+              child: ElevatedButton(
+                style: kBottomButtonStyle,
+                child: Text(
+                  '영상 유언 남기기',
+                  style: kButtonTextStyle,
+                ),
                 onPressed: () {
                   print('Go to TestmentIntroductionScreen button pressed');
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -52,14 +52,15 @@ class MainScreen extends StatelessWidget {
                 },
               ),
             ),
-            SizedBox(
-              height: 5.0,
-            ),
+            SizedBox(height: 5.0),
             Expanded(
               flex: 2,
-              child: MaterialButton(
-                color: Colors.blue,
-                child: Text('저장된 유언'),
+              child: ElevatedButton(
+                style: kBottomButtonStyle,
+                child: Text(
+                  '저장된 유언',
+                  style: kButtonTextStyle,
+                ),
                 onPressed: () {
                   print('Go to SavedTestmentScreen button pressed');
                   Navigator.push(context, MaterialPageRoute(builder: (context) {

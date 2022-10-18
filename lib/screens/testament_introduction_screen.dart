@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vacuum_flutter/common/constant.dart';
 import 'package:vacuum_flutter/screens/recording_screen.dart';
 import 'package:vacuum_flutter/screens/test_recording_guide_screen.dart';
 
@@ -20,7 +21,6 @@ class TestamentIntroductionScreen extends StatelessWidget {
             Expanded(
               flex: 12,
               child: Container(
-                color: Colors.green,
                 child: Center(
                   child: Text(
                     "This is Testament introduction Page\nGive information of the Testament to user \non this screen.",
@@ -33,9 +33,12 @@ class TestamentIntroductionScreen extends StatelessWidget {
             ),
             Expanded(
               flex: 2,
-              child: MaterialButton(
-                color: Colors.purple,
-                child: Text('사전 연습하기'),
+              child: ElevatedButton(
+                style: kBottomButtonStyle,
+                child: Text(
+                  '사전 연습하기',
+                  style: kButtonTextStyle,
+                ),
                 onPressed: () {
                   print('Go to Test Recording Guide Screen.');
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -49,9 +52,12 @@ class TestamentIntroductionScreen extends StatelessWidget {
             ),
             Expanded(
               flex: 2,
-              child: MaterialButton(
-                color: Colors.blue,
-                child: Text('영상 유언 남기기'),
+              child: ElevatedButton(
+                style: kBottomButtonStyle,
+                child: Text(
+                  '영상 유언 남기기',
+                  style: kButtonTextStyle,
+                ),
                 onPressed: () {
                   print('Go to RecordingScreen.');
                   Navigator.push(context, MaterialPageRoute(builder: (context) {

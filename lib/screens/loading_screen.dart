@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vacuum_flutter/common/constant.dart';
 import 'package:vacuum_flutter/screens/login_screen.dart';
 import 'package:vacuum_flutter/screens/main_screen.dart';
 import 'package:vacuum_flutter/services/user.dart';
@@ -39,18 +40,24 @@ class _LoadingScreenState extends State<LoadingScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text('This is Loading Screen'),
-          MaterialButton(
-            color: Colors.orange,
-            child: Text('Go to Login Screen'),
+          ElevatedButton(
+            style: kBottomButtonStyle,
+            child: Text(
+              'Go to Login Screen',
+              style: kButtonTextStyle,
+            ),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return LoginScreen();
               }));
             },
           ),
-          MaterialButton(
-            color: Colors.purple,
-            child: Text('Go to Main Screen'),
+          ElevatedButton(
+            style: kBottomButtonStyle,
+            child: Text(
+              'Go to Main Screen',
+              style: kButtonTextStyle,
+            ),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
                 return MainScreen();

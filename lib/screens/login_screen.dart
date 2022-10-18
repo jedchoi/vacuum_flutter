@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vacuum_flutter/common/constant.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -9,9 +10,12 @@ class LoginScreen extends StatelessWidget {
         title: Text('Login Screen'),
       ),
       body: Center(
-        child: MaterialButton(
-          color: Colors.red,
-          child: Text('This is Login Screen'),
+        child: ElevatedButton(
+          style: kBottomButtonStyle,
+          child: Text(
+            'This is Login Screen',
+            style: kButtonTextStyle,
+          ),
           onPressed: () {
             // Navigator.push(context, MaterialPageRoute(builder: (context) {
             //   return Screen2();

@@ -30,7 +30,7 @@ class SettingScreen extends StatelessWidget {
             ),
             // Expanded(
             //   flex: 2,
-            //   child: MaterialButton(
+            //   child: ElevatedButton(
             //     color: Colors.blue,
             //     child: Text('완료'),
             //     onPressed: () {

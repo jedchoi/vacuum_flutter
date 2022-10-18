@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vacuum_flutter/common/constant.dart';
 import 'package:vacuum_flutter/screens/test_recording_screen.dart';
 
 class TestRecordingGuideScreen extends StatelessWidget {
@@ -29,9 +30,12 @@ class TestRecordingGuideScreen extends StatelessWidget {
             ),
             Expanded(
               flex: 2,
-              child: MaterialButton(
-                color: Colors.blue,
-                child: Text('완료'),
+              child: ElevatedButton(
+                style: kBottomButtonStyle,
+                child: Text(
+                  '완료',
+                  style: kButtonTextStyle,
+                ),
                 onPressed: () {
                   print('Go to Test Recording Guide Screen.');
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
