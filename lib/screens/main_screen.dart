@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:vacuum_flutter/screens/setting_screen.dart';
 import 'package:vacuum_flutter/screens/testament_introduction_screen.dart';
 import 'package:vacuum_flutter/screens/testament_list_screen.dart';
 
@@ -9,6 +10,16 @@ class MainScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.red,
         title: Text('Main Screen'),
+        actions: <Widget>[
+          IconButton(
+              onPressed: () {
+                print('Go to Setting Screen button pressed');
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return SettingScreen();
+                }));
+              },
+              icon: Icon(Icons.settings)),
+        ],
       ),
       body: Center(
         child: Column(
