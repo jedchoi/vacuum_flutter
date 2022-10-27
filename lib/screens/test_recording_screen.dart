@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:vacuum_flutter/common/constant.dart';
 import 'package:vacuum_flutter/screens/testament_detail_screen.dart';
-import 'package:vacuum_flutter/screens/testament_introduction_screen.dart';
 import 'package:camera/camera.dart';
 
 class TestRecordingScreen extends StatefulWidget {
@@ -43,8 +41,7 @@ class _TestRecordingScreenState extends State<TestRecordingScreen> {
       setState(() => _isRecording = false);
       final route = MaterialPageRoute(
         fullscreenDialog: true,
-        // builder: (_) => VideoPage(filePath: file.path),
-        builder: (_) => TestamentDetailScreen(),
+        builder: (_) => TestamentDetailScreen(videoFile: file),
       );
       Navigator.push(context, route);
     } else {

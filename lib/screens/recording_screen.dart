@@ -39,9 +39,9 @@ class RecordingScreen extends StatelessWidget {
                 ),
                 onPressed: () {
                   print('Recording Done. Go to Testament Saving Screen');
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return TestamentDetailScreen();
-                  }));
+                  // Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  //   return TestamentDetailScreen(videoFile: XFile.fromData("d"),);
+                  // }));
                 },
               ),
             ),
