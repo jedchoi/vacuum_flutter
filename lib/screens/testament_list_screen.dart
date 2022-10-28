@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vacuum_flutter/common/constant.dart';
 import 'package:vacuum_flutter/screens/main_screen.dart';
 import 'package:vacuum_flutter/screens/testament_introduction_screen.dart';
+import 'package:vacuum_flutter/common/logger.dart';
 
 class TestamentListScreen extends StatelessWidget {
   @override
@@ -38,7 +39,7 @@ class TestamentListScreen extends StatelessWidget {
                   style: kButtonTextStyle,
                 ),
                 onPressed: () {
-                  print('Testament List Page Done. Go to Main Screen');
+                  logD('Testament List Page Done. Go to Main Screen');
                   // Navigator.of(context).pop();
                   // .popUntil(ModalRoute.withName('/MainScreen'));
                   Navigator.popUntil(

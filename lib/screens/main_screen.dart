@@ -3,6 +3,7 @@ import 'package:vacuum_flutter/common/constant.dart';
 import 'package:vacuum_flutter/screens/setting_screen.dart';
 import 'package:vacuum_flutter/screens/testament_introduction_screen.dart';
 import 'package:vacuum_flutter/screens/testament_list_screen.dart';
+import 'package:vacuum_flutter/common/logger.dart';
 
 class MainScreen extends StatelessWidget {
   @override
@@ -14,7 +15,7 @@ class MainScreen extends StatelessWidget {
         actions: <Widget>[
           IconButton(
               onPressed: () {
-                print('Go to Setting Screen button pressed');
+                logD('Go to Setting Screen button pressed');
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return SettingScreen();
                 }));
@@ -45,7 +46,7 @@ class MainScreen extends StatelessWidget {
                   style: kButtonTextStyle,
                 ),
                 onPressed: () {
-                  print('Go to TestmentIntroductionScreen button pressed');
+                  logD('Go to TestmentIntroductionScreen button pressed');
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return TestamentIntroductionScreen();
                   }));
@@ -62,7 +63,7 @@ class MainScreen extends StatelessWidget {
                   style: kButtonTextStyle,
                 ),
                 onPressed: () {
-                  print('Go to SavedTestmentScreen button pressed');
+                  logD('Go to SavedTestmentScreen button pressed');
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return TestamentListScreen();
                   }));

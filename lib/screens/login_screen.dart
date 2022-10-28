@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vacuum_flutter/common/constant.dart';
+import 'package:vacuum_flutter/common/logger.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -20,7 +21,7 @@ class LoginScreen extends StatelessWidget {
             // Navigator.push(context, MaterialPageRoute(builder: (context) {
             //   return Screen2();
             // }));
-            print('login screen button pressed');
+            logD('login screen button pressed');
           },
         ),
       ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vacuum_flutter/common/constant.dart';
 import 'package:vacuum_flutter/screens/recording_screen.dart';
 import 'package:vacuum_flutter/screens/test_recording_guide_screen.dart';
+import 'package:vacuum_flutter/common/logger.dart';
 
 class TestamentIntroductionScreen extends StatelessWidget {
   @override
@@ -40,7 +41,7 @@ class TestamentIntroductionScreen extends StatelessWidget {
                   style: kButtonTextStyle,
                 ),
                 onPressed: () {
-                  print('Go to Test Recording Guide Screen.');
+                  logD('Go to Test Recording Guide Screen.');
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return TestRecordingGuideScreen();
                   }));
@@ -59,7 +60,7 @@ class TestamentIntroductionScreen extends StatelessWidget {
                   style: kButtonTextStyle,
                 ),
                 onPressed: () {
-                  print('Go to RecordingScreen.');
+                  logD('Go to RecordingScreen.');
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
                     return RecordingScreen();
                   }));

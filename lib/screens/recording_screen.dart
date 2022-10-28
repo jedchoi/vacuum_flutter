@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:vacuum_flutter/common/constant.dart';
 import 'package:vacuum_flutter/screens/testament_detail_screen.dart';
 import 'package:vacuum_flutter/screens/testament_introduction_screen.dart';
+import 'package:vacuum_flutter/common/logger.dart';
 
 class RecordingScreen extends StatelessWidget {
   @override
@@ -38,7 +39,7 @@ class RecordingScreen extends StatelessWidget {
                   style: kButtonTextStyle,
                 ),
                 onPressed: () {
-                  print('Recording Done. Go to Testament Saving Screen');
+                  logD('Recording Done. Go to Testament Saving Screen');
                   // Navigator.push(context, MaterialPageRoute(builder: (context) {
                   //   return TestamentDetailScreen(videoFile: XFile.fromData("d"),);
                   // }));

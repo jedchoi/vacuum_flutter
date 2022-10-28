@@ -1,6 +1,7 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:vacuum_flutter/common/constant.dart';
+import 'package:vacuum_flutter/common/logger.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
@@ -24,51 +25,51 @@ class _TestamentDetailScreenState extends State<TestamentDetailScreen> {
 
   _getStoragePermission() async {
     if (await Permission.storage.isGranted) {
-      print('Storage permission is granted.');
+      logD('Storage permission is granted.');
       _saveFile();
     } else {
-      print('Request Storage permission.');
+      logD('Request Storage permission.');
       var result = await Permission.storage.request();
       if (result == PermissionStatus.granted) {
-        print('Storage permission is granted.');
+        logD('Storage permission is granted.');
         _saveFile();
       } else {
-        print('Fail to get Storage permission.');
+        logD('Fail to get Storage permission.');
       }
     }
   }
 
   _createFolder(BuildContext context) async {
-    print('createFolder start');
+    logD('createFolder start');
     try {
       // Create Folder
       Directory appDocDirectory = await getApplicationDocumentsDirectory();
-      print('app document directory : $appDocDirectory');
+      logD('app document directory : $appDocDirectory');
       _currentPath = appDocDirectory.path + '/' + kDefaultFolderName;
       if (await Directory(_currentPath).exists()) {
-        print('Already exist Dir: ' + _currentPath);
+        logD('Already exist Dir: ' + _currentPath);
       } else {
         new Directory(_currentPath)
             .create(recursive: true)
             .then((Directory directory) {
-          print('Path of New Dir: ' + _currentPath);
+          logD('Path of New Dir: ' + _currentPath);
         });
       }
     } catch (e) {
-      print('fail to create default folder : $e');
+      logD('fail to create default folder : $e');
     }
   }
 
   _saveFile() async {
-    print('save file start');
+    logD('save file start');
     await _createFolder(context);
-    print('save file path : ' + _currentPath + '/' + widget.videoFile.name);
+    logD('save file path : ' + _currentPath + '/' + widget.videoFile.name);
 
     await widget.videoFile.saveTo(_currentPath + '/' + widget.videoFile.name);
     Directory(_currentPath).list()
         // .where((e) => e is File)
         .forEach((element) async {
-      print("item : " + await element.stat().toString());
+      logD("item : " + await element.stat().toString());
     });
   }
 
@@ -107,7 +108,7 @@ class _TestamentDetailScreenState extends State<TestamentDetailScreen> {
                   style: kButtonTextStyle,
                 ),
                 onPressed: () {
-                  print('Testament Detail Page Done. Go to Main Screen');
+                  logD('Testament Detail Page Done. Go to Main Screen');
                   // Navigator.of(context).pop();
                   // .popUntil(ModalRoute.withName('/MainScreen'));
                   Navigator.popUntil(

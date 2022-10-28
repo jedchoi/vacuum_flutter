@@ -34,7 +34,7 @@ class SettingScreen extends StatelessWidget {
             //     color: Colors.blue,
             //     child: Text('완료'),
             //     onPressed: () {
-            //       print('Testament List Page Done. Go to Main Screen');
+            //       logD('Testament List Page Done. Go to Main Screen');
             //       // Navigator.of(context).pop();
             //       // .popUntil(ModalRoute.withName('/MainScreen'));
             //       Navigator.popUntil(
