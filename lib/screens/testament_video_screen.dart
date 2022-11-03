@@ -32,17 +32,8 @@ class _TestamentVideoScreenState extends State<TestamentVideoScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Preview'),
-        elevation: 0,
-        backgroundColor: Colors.black26,
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.check),
-            onPressed: () {
-              print('do something with the file');
-            },
-          )
-        ],
+        backgroundColor: Colors.red,
+        title: const Text('Testament Video Screen'),
       ),
       extendBodyBehindAppBar: true,
       body: FutureBuilder(
