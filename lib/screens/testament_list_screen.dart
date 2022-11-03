@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:vacuum_flutter/common/constant.dart';
+import 'package:vacuum_flutter/screens/Testament_video_screen.dart';
 import 'package:vacuum_flutter/screens/main_screen.dart';
 import 'package:vacuum_flutter/screens/testament_introduction_screen.dart';
 import 'package:vacuum_flutter/common/logger.dart';
@@ -64,6 +65,12 @@ class _TestamentListScreenState extends State<TestamentListScreen> {
               title: Text('${_fileList[index].toString()}'),
               onTap: () {
                 logD('${_fileList[index]} is pressed');
+                final route = MaterialPageRoute(
+                  fullscreenDialog: true,
+                  builder: (_) =>
+                      TestamentVideoScreen(filePath: _fileList[index].path),
+                );
+                Navigator.push(context, route);
               },
             ),
           );
