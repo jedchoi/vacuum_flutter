@@ -63,14 +63,27 @@ class _TestamentDetailScreenState extends State<TestamentDetailScreen> {
   _saveFile() async {
     logD('save file start');
     await _createFolder(context);
-    logD('save file path : ' + _currentPath + '/' + widget.videoFile.name);
+    logD(
+        'save file path : ' + _currentPath + '/' + 'video' + _getCurrentTime());
 
-    await widget.videoFile.saveTo(_currentPath + '/' + widget.videoFile.name);
+    await widget.videoFile
+        .saveTo(_currentPath + '/' + 'Ready' + _getCurrentTime() + '.mp4');
     Directory(_currentPath).list()
         // .where((e) => e is File)
         .forEach((element) async {
-      logD("item : " + await element.stat().toString());
+      logD("item : " + await element.path);
     });
+  }
+
+  String _getCurrentTime() {
+    DateTime now = DateTime.now();
+    return now
+        .toString()
+        .split('.')
+        .first
+        .replaceAll('-', '')
+        .replaceAll(':', '')
+        .replaceAll(' ', '');
   }
 
   @override
