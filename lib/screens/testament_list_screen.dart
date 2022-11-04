@@ -62,7 +62,8 @@ class _TestamentListScreenState extends State<TestamentListScreen> {
           return Container(
             padding: const EdgeInsets.all(8),
             child: ListTile(
-              title: Text('${_fileList[index].toString()}'),
+              leading: Icon(Icons.picture_as_pdf),
+              title: Text('${_fileList[index].path.split('/').last}'),
               onTap: () {
                 logD('${_fileList[index]} is pressed');
                 final route = MaterialPageRoute(
