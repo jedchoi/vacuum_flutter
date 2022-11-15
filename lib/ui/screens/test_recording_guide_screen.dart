@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:vacuum_flutter/common/constant.dart';
-import 'package:vacuum_flutter/screens/test_recording_screen.dart';
+import 'package:vacuum_flutter/ui/screens/test_recording_screen.dart';
 import 'package:vacuum_flutter/common/logger.dart';
 
 class TestRecordingGuideScreen extends StatelessWidget {

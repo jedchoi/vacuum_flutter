@@ -6,6 +6,9 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 
+import 'package:vacuum_flutter/domain/usecases/get_current_time_usecase.dart';
+import 'package:vacuum_flutter/infra/recording_repository.dart';
+
 class TestamentDetailScreen extends StatefulWidget {
   final XFile videoFile;
   const TestamentDetailScreen({Key? key, required this.videoFile})
@@ -63,11 +66,14 @@ class _TestamentDetailScreenState extends State<TestamentDetailScreen> {
   _saveFile() async {
     logD('save file start');
     await _createFolder(context);
-    logD(
-        'save file path : ' + _currentPath + '/' + 'video' + _getCurrentTime());
+    logD('save file path : ' +
+        _currentPath +
+        '/' +
+        'video' +
+        await _getCurrentTime());
 
-    await widget.videoFile
-        .saveTo(_currentPath + '/' + 'Ready' + _getCurrentTime() + '.mp4');
+    await widget.videoFile.saveTo(
+        _currentPath + '/' + 'Ready' + await _getCurrentTime() + '.mp4');
     Directory(_currentPath).list()
         // .where((e) => e is File)
         .forEach((element) async {
@@ -75,15 +81,10 @@ class _TestamentDetailScreenState extends State<TestamentDetailScreen> {
     });
   }
 
-  String _getCurrentTime() {
-    DateTime now = DateTime.now();
-    return now
-        .toString()
-        .split('.')
-        .first
-        .replaceAll('-', '')
-        .replaceAll(':', '')
-        .replaceAll(' ', '');
+  Future<String> _getCurrentTime() async {
+    final useCase = GetCurrentTimeUseCase(requirement: RecordingRepository());
+    final data = useCase.execute();
+    return data;
   }
 
   @override

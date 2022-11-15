@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:vacuum_flutter/screens/main_screen.dart';
-import 'package:vacuum_flutter/screens/testament_introduction_screen.dart';
+import 'package:vacuum_flutter/ui/screens/main_screen.dart';
+import 'package:vacuum_flutter/ui/screens/testament_introduction_screen.dart';
 
 class SettingScreen extends StatelessWidget {
   @override

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vacuum_flutter/common/constant.dart';
 import 'package:vacuum_flutter/common/logger.dart';
-import 'package:vacuum_flutter/entities/testament_check_item.dart';
-import 'package:vacuum_flutter/screens/testament_detail_screen.dart';
+import 'package:vacuum_flutter/ui/entities/testament_check_item.dart';
+import 'package:vacuum_flutter/ui/screens/testament_detail_screen.dart';
 import 'package:camera/camera.dart';
 
 class TestRecordingScreen extends StatefulWidget {

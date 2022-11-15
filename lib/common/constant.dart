@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 const kTestamentCheckList = ['이름', '주소', '날짜', '기타'];
 const kDefaultFolderName = "testament_video";
+const kThumbnailFolderName = "testament_thumbnail";
 
 const kButtonTextStyle = TextStyle(
   fontSize: 17.0,

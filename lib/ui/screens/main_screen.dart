@@ -1,56 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:vacuum_flutter/common/constant.dart';
-import 'package:vacuum_flutter/screens/recording_screen.dart';
-import 'package:vacuum_flutter/screens/test_recording_guide_screen.dart';
+import 'package:vacuum_flutter/ui/screens/setting_screen.dart';
+import 'package:vacuum_flutter/ui/screens/testament_introduction_screen.dart';
+import 'package:vacuum_flutter/ui/screens/testament_list_screen.dart';
 import 'package:vacuum_flutter/common/logger.dart';
 
-class TestamentIntroductionScreen extends StatelessWidget {
+class MainScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.red,
-        title: Text('Testament introduction'),
+        title: Text('Main Screen'),
+        actions: <Widget>[
+          IconButton(
+              onPressed: () {
+                logD('Go to Setting Screen button pressed');
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return SettingScreen();
+                }));
+              },
+              icon: Icon(Icons.settings)),
+        ],
       ),
       body: Center(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            SizedBox(
-              height: 5.0,
-            ),
+            SizedBox(height: 5.0),
             Expanded(
               flex: 12,
-              child: Container(
-                child: Center(
-                  child: Text(
-                    "This is Testament introduction Page\nGive information of the Testament to user \non this screen.",
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 5.0,
-            ),
-            Expanded(
-              flex: 2,
-              child: ElevatedButton(
-                style: kBottomButtonStyle,
+              child: Center(
                 child: Text(
-                  '사전 연습하기',
-                  style: kButtonTextStyle,
+                  "This is Main Page",
                 ),
-                onPressed: () {
-                  logD('Go to Test Recording Guide Screen.');
-                  Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return TestRecordingGuideScreen();
-                  }));
-                },
               ),
             ),
-            SizedBox(
-              height: 5.0,
-            ),
+            SizedBox(height: 5.0),
             Expanded(
               flex: 2,
               child: ElevatedButton(
@@ -60,9 +46,26 @@ class TestamentIntroductionScreen extends StatelessWidget {
                   style: kButtonTextStyle,
                 ),
                 onPressed: () {
-                  logD('Go to RecordingScreen.');
+                  logD('Go to TestmentIntroductionScreen button pressed');
                   Navigator.push(context, MaterialPageRoute(builder: (context) {
-                    return RecordingScreen();
+                    return TestamentIntroductionScreen();
+                  }));
+                },
+              ),
+            ),
+            SizedBox(height: 5.0),
+            Expanded(
+              flex: 2,
+              child: ElevatedButton(
+                style: kBottomButtonStyle,
+                child: Text(
+                  '저장된 유언',
+                  style: kButtonTextStyle,
+                ),
+                onPressed: () {
+                  logD('Go to SavedTestmentScreen button pressed');
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return TestamentListScreen();
                   }));
                 },
               ),

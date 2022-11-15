@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:vacuum_flutter/common/constant.dart';
-import 'package:vacuum_flutter/screens/login_screen.dart';
-import 'package:vacuum_flutter/screens/main_screen.dart';
-import 'package:vacuum_flutter/services/user.dart';
+import 'package:vacuum_flutter/ui/screens/login_screen.dart';
+import 'package:vacuum_flutter/ui/screens/main_screen.dart';
+import 'package:vacuum_flutter/domain/entities/user.dart';
 
 class LoadingScreen extends StatefulWidget {
   @override

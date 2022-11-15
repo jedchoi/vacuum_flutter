@@ -2,13 +2,14 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:vacuum_flutter/common/constant.dart';
-import 'package:vacuum_flutter/screens/Testament_video_screen.dart';
-import 'package:vacuum_flutter/screens/main_screen.dart';
-import 'package:vacuum_flutter/screens/testament_introduction_screen.dart';
+import 'package:vacuum_flutter/ui/screens/Testament_video_screen.dart';
+import 'package:vacuum_flutter/ui/screens/main_screen.dart';
+import 'package:vacuum_flutter/ui/screens/testament_introduction_screen.dart';
 import 'package:vacuum_flutter/common/logger.dart';
 import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 import 'package:video_player/video_player.dart';
+// import 'package:video_thumbnail/video_thumbnail.dart';
 
 class TestamentListScreen extends StatefulWidget {
   const TestamentListScreen({Key? key}) : super(key: key);
